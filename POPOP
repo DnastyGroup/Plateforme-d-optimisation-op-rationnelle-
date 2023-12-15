@@ -1,0 +1,43 @@
+import tkinter as tk
+from tkinter import ttk
+
+class InterfaceApp:
+    def __init__(self, root):
+        root.title("Plateforme d'Optimisation Opérationnelle")
+        
+        # Création du tableau de bord centralisé
+        self.create_dashboard(root)
+        
+        # Création des onglets pour chaque module
+        self.create_tabs(root)
+        
+    def create_dashboard(self, root):
+        # Exemple de tableau de bord avec un label
+        label_dashboard = tk.Label(root, text="Tableau de Bord Centralisé")
+        label_dashboard.pack(pady=10)
+        
+        # Vous pouvez ajouter d'autres composants ici
+        
+    def create_tabs(self, root):
+        # Création d'onglets avec ttk.Notebook
+        tab_control = ttk.Notebook(root)
+        
+        # Exemple de gestion des commandes
+        tab_orders = ttk.Frame(tab_control)
+        tab_control.add(tab_orders, text="Gestion des Commandes")
+        
+        # Exemple de gestion des stocks
+        tab_stock = ttk.Frame(tab_control)
+        tab_control.add(tab_stock, text="Gestion des Stocks")
+        
+        # Ajoutez d'autres onglets pour chaque module
+        
+        tab_control.pack(expand=1, fill="both")
+        
+        # Vous pouvez ajouter des composants spécifiques à chaque onglet ici
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = InterfaceApp(root)
+    root.geometry("800x600")
+    root.mainloop()
